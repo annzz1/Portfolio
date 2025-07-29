@@ -12,12 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
-                
-                // Update active nav link
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
             }
         });
     });
@@ -39,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 content.classList.remove('active');
                 if (content.id === category) {
                     content.classList.add('active');
+                    // Animate skill bars when tab becomes active
+                    animateSkillBars(content);
                 }
             });
         });
@@ -61,52 +57,213 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Here you would typically send the form data to a server
-            // For demo purposes, we'll just show a success message
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
             alert('Thank you for your message! I will get back to you soon.');
             this.reset();
         });
     }
     
-    // Scroll reveal animations
-    const scrollReveal = () => {
-        const elements = document.querySelectorAll('.section-header, .about-content, .skills-container, .project-card, .service-card, .contact-content');
+    // Load specific projects from GitHub API
+    const loadProjects = async () => {
+        const targetRepos = ['fakeusersapp', 'collectionsapp','spacewebapp','announcementswebapp'];
+        
+        try {
+            const projectsGrid = document.getElementById('projects-grid');
+            projectsGrid.innerHTML = '';
+            
+            // Fetch each specific repository
+            for (const repoName of targetRepos) {
+                try {
+                    const response = await fetch(`https://api.github.com/repos/annzz1/${repoName}`);
+                    if (response.ok) {
+                        const repo = await response.json();
+                        createProjectCard(repo, projectsGrid);
+                    }
+                } catch (error) {
+                    console.error(`Error loading ${repoName}:`, error);
+                }
+            }
+            
+            // If no projects loaded, show fallback
+            if (projectsGrid.children.length === 0) {
+                projectsGrid.innerHTML = `
+                    <div class="error-message">
+                        <p>Projects are currently being updated. Please visit my <a href="https://github.com/annzz1" target="_blank">GitHub profile</a> to see my latest work.</p>
+                    </div>
+                `;
+            }
+            
+        } catch (error) {
+            console.error('Error loading projects:', error);
+            document.getElementById('projects-grid').innerHTML = `
+                <div class="error-message">
+                    <p>Unable to load projects at this time. Please visit my <a href="https://github.com/annzz1" target="_blank">GitHub profile</a>.</p>
+                </div>
+            `;
+        }
+    };
+    
+    // Create project card
+    const createProjectCard = (repo, container) => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        projectCard.innerHTML = `
+            <div class="project-image">
+                <div style="
+                    background: linear-gradient(45deg, ${getRandomGradient()});
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--almond-light);
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                ">
+                    ${formatRepoName(repo.name)}
+                </div>
+                <div class="project-overlay">
+                    <div class="project-tech">
+                        <span>${repo.language || 'C#'}</span>
+                        ${repo.topics && repo.topics.length > 0 ? repo.topics.slice(0, 2).map(topic => `<span>${topic}</span>`).join('') : '<span>GitHub</span>'}
+                    </div>
+                </div>
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">${formatRepoName(repo.name)}</h3>
+                <p class="project-description">${repo.description || 'A personal development project showcasing .NET development skills'}</p>
+                <a href="${repo.html_url}" target="_blank" class="project-link">View Repository →</a>
+            </div>
+        `;
+        container.appendChild(projectCard);
+        
+        // Add entrance animation
+        setTimeout(() => {
+            projectCard.style.opacity = '1';
+            projectCard.style.transform = 'translateY(0)';
+        }, 100);
+    };
+    
+    // Helper functions for projects
+    const formatRepoName = (name) => {
+        return name
+            .replace(/([a-z])([A-Z])/g, '$1 $2')
+            .replace(/-/g, ' ')
+            .replace(/(^\w|\s\w)/g, m => m.toUpperCase());
+    };
+    
+    const getRandomGradient = () => {
+        const gradients = [
+            'var(--green-velvet), var(--plum-wine)',
+            'var(--plum-wine), var(--golden-sandlewood)',
+            'var(--golden-sandlewood), var(--green-velvet)',
+            'var(--plum-wine), var(--carbon-powder)'
+        ];
+        return gradients[Math.floor(Math.random() * gradients.length)];
+    };
+    
+    // Animate skill bars
+    const animateSkillBars = (container = document) => {
+        const skillBars = container.querySelectorAll('.skill-bar');
+        
+        skillBars.forEach((bar, index) => {
+            const rect = bar.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+            
+            if (isVisible && !bar.classList.contains('animated')) {
+                const level = bar.querySelector('.skill-level');
+                const width = bar.getAttribute('data-level');
+                
+                if (width) {
+                    setTimeout(() => {
+                        level.style.width = width + '%';
+                        bar.classList.add('animated');
+                    }, index * 100);
+                }
+            }
+        });
+    };
+    
+    // Initialize scroll reveal
+    const initScrollReveal = () => {
+        const elements = document.querySelectorAll('.section-header, .about-content, .skills-container, .contact-content');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
             
             if (elementPosition < windowHeight - 100) {
-                element.classList.add('animate-fade-in');
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
             }
         });
+        
+        // Animate skill bars on scroll
+        animateSkillBars();
     };
     
-    // Initialize scroll reveal on load
-    scrollReveal();
+    // Set up initial animations
+    document.querySelectorAll('.section-header, .about-content, .skills-container, .contact-content').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    });
     
-    // Add scroll event listener
-    window.addEventListener('scroll', scrollReveal);
+    // Project cards initial setup
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
     
-    // Navbar scroll effect
+    // Navbar scroll effect and active link updates
+    let lastScrollY = window.scrollY;
+    
     window.addEventListener('scroll', function() {
         const nav = document.querySelector('.nav-container');
-        if (window.scrollY > 50) {
+        const currentScrollY = window.scrollY;
+        
+        // Navbar styling
+        if (currentScrollY > 50) {
             nav.style.padding = '10px 0';
             nav.style.background = 'rgba(16, 18, 17, 0.98)';
         } else {
             nav.style.padding = '20px 0';
             nav.style.background = 'rgba(16, 18, 17, 0.95)';
         }
+        
+        // Update active nav link
+        const sections = document.querySelectorAll('section');
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (currentScrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Scroll animations
+        initScrollReveal();
+        
+        lastScrollY = currentScrollY;
     });
     
-    // Set current year in footer
-    document.querySelector('.footer-copy').textContent = `© ${new Date().getFullYear()} Alex Johnson. All rights reserved.`;
-
-    // Add scroll-to-top button functionality
+    // Scroll-to-top button functionality
     const scrollToTopBtn = document.getElementById('scrollToTop');
     
-    // Show/hide button based on scroll position
     window.addEventListener('scroll', function() {
         if (window.scrollY > 500) {
             scrollToTopBtn.classList.add('visible');
@@ -115,11 +272,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Smooth scroll to top when clicked
     scrollToTopBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
+    
+    // Initialize everything
+    loadProjects();
+    initScrollReveal();
+    
+    // Animate skill bars for initially visible content
+    setTimeout(() => {
+        animateSkillBars();
+    }, 500);
 });

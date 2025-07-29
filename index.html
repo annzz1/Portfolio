@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior .NET Developer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>A.M | .NET Developer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,7 +20,7 @@
                 <li><a href="#about" class="nav-link active" data-text="[ ABOUT ]">[ ABOUT ]</a></li>
                 <li><a href="#skills" class="nav-link" data-text="[ SKILLS ]">[ SKILLS ]</a></li>
                 <li><a href="#projects" class="nav-link" data-text="[ PROJECTS ]">[ PROJECTS ]</a></li>
-                <li><a href="#services" class="nav-link" data-text="[ SERVICES ]">[ SERVICES ]</a></li>
+                <li><a href="#experience" class="nav-link" data-text="[ EXPERIENCE ]">[ EXPERIENCE ]</a></li>
                 <li><a href="#contact" class="nav-link" data-text="[ CONTACT ]">[ CONTACT ]</a></li>
             </ul>
             <div class="portfolio-label">
@@ -32,14 +33,14 @@
     <!-- Hero Section -->
     <section class="hero-section" id="home">
         <div class="hero-content">
-            <div class="hero-subtitle">.NET Developer & Solutions Architect</div>
-              <div class="name-container">
+            <div class="hero-subtitle">.NET Developer</div>
+            <div class="name-container">
                 <div class="first-name">ANI</div>
                 <div class="last-name">METSKHVARISHVILI</div>
             </div>
             
             <div class="hero-description">
-                <p>Crafting robust, scalable solutions with modern .NET technologies</p>
+                <p>Building clean, functional applications with .NET and C#</p>
             </div>
             
             <div class="hero-cta">
@@ -48,7 +49,6 @@
             </div>
         </div>
         
-        <!-- FIXED SCROLL INDICATOR -->
         <div class="scroll-indicator">
             <div class="scroll-text">EXPLORE</div>
             <div class="scroll-line"></div>
@@ -70,23 +70,13 @@
         <div class="about-container">
             <div class="about-content">
                 <div class="about-text">
-                    <p>With over 8 years of experience in software development, I specialize in building enterprise-grade applications using the .NET ecosystem. My approach combines technical excellence with clean architecture principles to deliver maintainable, high-performance solutions.</p>
+                    <p>As a passionate junior+ .NET developer, I'm building my expertise in developing robust applications using the .NET ecosystem. I focus on writing clean, maintainable code and continuously learning best practices and new technologies.</p>
                     
-                    <p>I've led development teams, architected complex systems, and mentored junior developers throughout my career. My passion lies in solving challenging problems with elegant code and staying at the forefront of technology trends.</p>
+                    <p>I enjoy solving problems with elegant solutions and collaborating with teams to create high-quality software. My goal is to grow into a well-rounded software engineer while contributing to meaningful projects.</p>
                     
-                    <div class="experience-grid">
-                        <div class="experience-item">
-                            <div class="exp-number">50+</div>
-                            <div class="exp-label">Projects Completed</div>
-                        </div>
-                        <div class="experience-item">
-                            <div class="exp-number">8+</div>
-                            <div class="exp-label">Years Experience</div>
-                        </div>
-                        <div class="experience-item">
-                            <div class="exp-number">100%</div>
-                            <div class="exp-label">Client Satisfaction</div>
-                        </div>
+                    <div class="current-focus">
+                        <h4>Current Focus</h4>
+                        <p>Deepening my expertise in .NET Core, cloud technologies, and modern web development practices</p>
                     </div>
                 </div>
                 
@@ -122,115 +112,85 @@
             <div class="skills-categories">
                 <div class="category-tabs">
                     <button class="tab-btn active" data-category="backend">Backend</button>
-                    <button class="tab-btn" data-category="frontend">Frontend</button>
-                    <button class="tab-btn" data-category="devops">DevOps</button>
                     <button class="tab-btn" data-category="database">Database</button>
+                    <button class="tab-btn" data-category="devops">DevOps</button>
                 </div>
                 
                 <div class="category-content active" id="backend">
                     <div class="skill-item">
                         <div class="skill-name">C# / .NET 8</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 95%"></div>
+                        <div class="skill-bar" data-level="80">
+                            <div class="skill-level"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">ASP.NET Core</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%"></div>
+                        <div class="skill-bar" data-level="90">
+                            <div class="skill-level"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">Microservices</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%"></div>
+                        <div class="skill-bar" data-level="85">
+                            <div class="skill-level"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">API Development</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 92%"></div>
+                        <div class="skill-bar" data-level="92">
+                            <div class="skill-level"></div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="category-content" id="frontend">
-                    <div class="skill-item">
-                        <div class="skill-name">Blazor</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">React</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">JavaScript/TypeScript</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">HTML/CSS</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="category-content" id="devops">
-                    <div class="skill-item">
-                        <div class="skill-name">Azure</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">Docker</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">CI/CD Pipelines</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 78%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">Kubernetes</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 70%"></div>
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="category-content" id="database">
                     <div class="skill-item">
                         <div class="skill-name">SQL Server</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%"></div>
+                        <div class="skill-bar" data-level="90">
+                            <div class="skill-level"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">Entity Framework</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 88%"></div>
+                        <div class="skill-bar" data-level="88">
+                            <div class="skill-level"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">PostgreSQL</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 75%"></div>
+                        <div class="skill-bar" data-level="75">
+                            <div class="skill-level"></div>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-name">Redis</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%"></div>
+                        <div class="skill-name">MongoDb</div>
+                        <div class="skill-bar" data-level="80">
+                            <div class="skill-level"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content" id="devops">
+                    <div class="skill-item">
+                        <div class="skill-name">Azure</div>
+                        <div class="skill-bar" data-level="85">
+                            <div class="skill-level"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Docker</div>
+                        <div class="skill-bar" data-level="80">
+                            <div class="skill-level"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">CI/CD Pipelines</div>
+                        <div class="skill-bar" data-level="78">
+                            <div class="skill-level"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Kubernetes</div>
+                        <div class="skill-bar" data-level="70">
+                            <div class="skill-level"></div>
                         </div>
                     </div>
                 </div>
@@ -244,8 +204,8 @@
                     <div class="tech-item" style="top: 20%; left: 50%">.NET</div>
                     <div class="tech-item" style="top: 40%; left: 70%">Azure</div>
                     <div class="tech-item" style="top: 60%; left: 60%">SQL</div>
-                    <div class="tech-item" style="top: 50%; left: 30%">Blazor</div>
-                    <div class="tech-item" style="top: 30%; left: 30%">React</div>
+                    <div class="tech-item" style="top: 50%; left: 30%">C#</div>
+                    <div class="tech-item" style="top: 30%; left: 30%">NoSQL</div>
                     <div class="tech-item" style="top: 70%; left: 40%">Docker</div>
                 </div>
             </div>
@@ -260,178 +220,120 @@
         </div>
         
         <div class="projects-container">
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div style="
-                            background: linear-gradient(45deg, var(--green-velvet), var(--plum-wine));
-                            height: 100%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: var(--almond-light);
-                        ">
-                            <h3>Enterprise CRM</h3>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tech">
-                                <span>.NET 8</span>
-                                <span>Azure</span>
-                                <span>React</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Enterprise CRM System</h3>
-                        <p class="project-description">Comprehensive customer relationship management platform with real-time analytics and workflow automation.</p>
-                        <a href="#" class="project-link">View Case Study →</a>
+            <div class="project-grid" id="projects-grid">
+                <!-- Projects will be dynamically loaded here -->
+                <div class="project-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-description"></div>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div style="
-                            background: linear-gradient(45deg, var(--plum-wine), var(--golden-sandlewood));
-                            height: 100%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: var(--almond-light);
-                        ">
-                            <h3>E-Commerce</h3>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tech">
-                                <span>Blazor</span>
-                                <span>SQL Server</span>
-                                <span>Redis</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-description">High-performance online store with payment processing and inventory management.</p>
-                        <a href="#" class="project-link">View Case Study →</a>
+                <div class="project-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-description"></div>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div style="
-                            background: linear-gradient(45deg, var(--golden-sandlewood), var(--green-velvet));
-                            height: 100%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: var(--almond-light);
-                        ">
-                            <h3>Financial Dashboard</h3>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tech">
-                                <span>.NET API</span>
-                                <span>SignalR</span>
-                                <span>D3.js</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Financial Dashboard</h3>
-                        <p class="project-description">Real-time data visualization for financial markets with custom reporting.</p>
-                        <a href="#" class="project-link">View Case Study →</a>
+                <div class="project-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-description"></div>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div style="
-                            background: linear-gradient(45deg, var(--plum-wine), var(--carbon-powder));
-                            height: 100%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: var(--almond-light);
-                        ">
-                            <h3>Healthcare Portal</h3>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tech">
-                                <span>FHIR</span>
-                                <span>HL7</span>
-                                <span>AWS</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Healthcare Portal</h3>
-                        <p class="project-description">HIPAA-compliant patient management system with telemedicine integration.</p>
-                        <a href="#" class="project-link">View Case Study →</a>
+                <div class="project-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-description"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section" id="services">
+    <!-- Experience & Education Section -->
+    <section class="experience-education-section" id="experience">
         <div class="section-header">
-            <h2 class="section-title">Services</h2>
-            <div class="section-subtitle">What I Offer</div>
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="section-subtitle">My Professional Journey</div>
         </div>
         
-        <div class="services-container">
-            <div class="service-cards">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
+        <div class="timeline-container">
+            <div class="timeline-column">
+                <h3>Work Experience</h3>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">.NET Developer</div>
+                        <div class="timeline-subtitle">ProCredit Bank</div>
+                        <div class="timeline-date">2024 November - Present</div>
                     </div>
-                    <h3 class="service-title">Custom Development</h3>
-                    <p class="service-description">Tailored software solutions designed to meet your specific business requirements.</p>
-                    <ul class="service-features">
-                        <li>Web Applications</li>
-                        <li>Enterprise Systems</li>
-                        <li>API Development</li>
-                    </ul>
+                    <div class="timeline-description">
+                        <p>Developing secure digital banking platforms with real-time customer impact</p>
+                        <ul>
+                            <li>Building robust backend services using .NET Core and T-SQL optimization</li>
+                            <li>Contributing to legacy system modernization and Agile development cycles</li>
+                            <li>Implementing banking-grade security protocols and compliance measures</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">.NET Developer</div>
+                        <div class="timeline-subtitle">EPAM Systems</div>
+                        <div class="timeline-date">2024 June - October</div>
                     </div>
-                    <h3 class="service-title">Cloud Solutions</h3>
-                    <p class="service-description">Scalable, secure cloud infrastructure and migration services.</p>
-                    <ul class="service-features">
-                        <li>Azure Integration</li>
-                        <li>AWS Deployment</li>
-                        <li>Containerization</li>
-                    </ul>
+                    <div class="timeline-description">
+                        <p>Delivered enterprise-level solutions for diverse clients</p>
+                        <ul>
+                            <li>Architected scalable microservices and cloud-native applications</li>
+                            <li>Collaborated across full-stack teams to build end-to-end solutions</li>
+                            <li>Optimized database performance for high-traffic applications</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3 class="service-title">Database Design</h3>
-                    <p class="service-description">Optimized database architecture for performance and scalability.</p>
-                    <ul class="service-features">
-                        <li>SQL Server</li>
-                        <li>NoSQL Solutions</li>
-                        <li>Data Migration</li>
-                    </ul>
-                </div>
+            </div>
+            
+            <div class="timeline-column">
+                <h3>Education</h3>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Computer Science</div>
+                        <div class="timeline-subtitle">Tbilisi State University (TSU)</div>
+                        <div class="timeline-date">2022 - 2026</div>
                     </div>
-                    <h3 class="service-title">Consulting</h3>
-                    <p class="service-description">Expert guidance on technology strategy and implementation.</p>
-                    <ul class="service-features">
-                        <li>Architecture Review</li>
-                        <li>Code Audits</li>
-                        <li>Team Mentoring</li>
-                    </ul>
+                    <div class="timeline-description">
+                        <p>Comprehensive computer science curriculum with focus on software engineering</p>
+                        <ul>
+                            <li>Specialized courses in algorithms, data structures, and system design</li>
+                            <li>Applied academic knowledge to real-world development challenges</li>
+                            <li>Research projects in distributed systems and application architecture</li>
+                        </ul>
+                    </div>
                 </div>
+                        
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">.NET Study Program</div>
+                        <div class="timeline-subtitle">Itransition</div>
+                        <div class="timeline-date">2024 February - May</div>
+                    </div>
+                    <div class="timeline-description">
+                        <p>Completed intensive .NET development training program</p>
+                        <ul>
+                            <li>Developed full-stack applications using .NET framework</li>
+                            <li>Created e-commerce solutions with HTML, CSS, and JavaScript</li>
+                            <li>Learned industry best practices and development methodologies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -452,7 +354,7 @@
                         </div>
                         <div class="info-content">
                             <h4>Email</h4>
-                            <a href="mailto:alex.johnson@example.com">animetskhvarishvili@gmail.com</a>
+                            <a href="mailto:animetskhvarishvili@gmail.com">animetskhvarishvili@gmail.com</a>
                         </div>
                     </div>
                     
@@ -462,7 +364,7 @@
                         </div>
                         <div class="info-content">
                             <h4>Phone</h4>
-                            <a href="tel:+1234567890">+ (995) 557 49 62 48</a>
+                            <a href="tel:+995557496248">+ (995) 557 49 62 48</a>
                         </div>
                     </div>
                     
@@ -477,10 +379,18 @@
                     </div>
                     
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-stack-overflow"></i></a>
+                        <a href="https://www.linkedin.com/in/ani-metskhvarishvili-9b5474272/" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/annzz1" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.upwork.com/freelancers/~01647346697d510b2e?mp_source=share" target="_blank" class="social-link" aria-label="UpWork">
+                            <i class="fab fa-upwork"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ani_mets_?igsh=MTVyNzF1bjl1Nndscg%3D%3D&utm_source=qr" target="_blank" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
                 
@@ -514,7 +424,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">AM</div>
@@ -522,7 +431,7 @@
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="#services">Services</a>
+                <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="footer-copy">
@@ -535,6 +444,7 @@
     <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+    
     <script src="js/index.js"></script>
 </body>
 </html>
