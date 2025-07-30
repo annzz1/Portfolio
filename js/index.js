@@ -63,8 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Please enter a valid email address');
                 return;
             }
-            
-            alert('Thank you for your message! I will get back to you soon.');
             this.reset();
         });
     }

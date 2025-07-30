@@ -401,9 +401,11 @@ img {
 .profile-image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     transition: transform var(--transition-medium);
 }
+
 
 .image-border {
     position: absolute;
@@ -411,7 +413,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    border: 1px solid var(--accent-primary);
+    border: 0.2px solid var(--accent-primary);
     border-radius: var(--radius-md);
     margin: var(--space-sm);
     pointer-events: none;
@@ -508,13 +510,14 @@ img {
 
 .skills-visual {
     position: relative;
-    height: 400px;
+    height: 500px;
 }
 
 .tech-radar {
     position: relative;
-    width: 100%;
+    width: 110%;
     height: 100%;
+     transform: rotateX(33deg) rotateY(0deg);
 }
 
 .radar-circle {
@@ -939,6 +942,8 @@ img {
 
 .form-field input,
 .form-field textarea {
+    margin-top: 15px;
+    margin-bottom: 20px;
     width: 100%;
     padding: var(--space-sm);
     background-color: transparent;
@@ -959,9 +964,7 @@ img {
     outline: none;
     border-color: var(--accent-primary);
 }
-
-  /* FIXED: Removed background color on floating labels */
-        .form-field input:focus + label,
+       .form-field input:focus + label,
         .form-field textarea:focus + label,
         .form-field input:not(:placeholder-shown) + label,
         .form-field textarea:not(:placeholder-shown) + label {
@@ -970,10 +973,35 @@ img {
             font-size: 0.75rem;
             padding: 0;
             color: var(--accent-primary);
-            background-color: transparent; /* Key fix for white background */
+            background-color: transparent;
         }
-        
 
+.form-field input:-webkit-autofill,
+.form-field input:-webkit-autofill:hover,
+.form-field input:-webkit-autofill:focus,
+.form-field input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    background-color: transparent !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Alternative method using transition delay */
+.form-field input:-webkit-autofill {
+    -webkit-transition-delay: 9999s;
+    -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+}
+
+/* For other browsers (Firefox, etc.) */
+.form-field input:-moz-autofill {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+}
+
+/* Ensure the text color remains correct */
+.form-field input:-webkit-autofill::first-line {
+    color: var(--text-primary) !important;
+}
 /* Footer */
 .footer {
     background-color: var(--bg-dark);
