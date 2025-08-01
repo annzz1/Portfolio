@@ -1167,6 +1167,52 @@ img {
     }
 }
 
+/* Responsive Navigation */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--accent-primary);
+    cursor: pointer;
+    margin-left: 1rem;
+    z-index: 1100;
+}
+
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 var(--space-sm);
+    }
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--bg-dark);
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-lg);
+        padding: var(--space-lg) 0;
+        display: none;
+        z-index: 1001;
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-toggle {
+        display: block;
+    }
+}
+
+/* Hide nav-menu on small screens by default */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+}
+
 @media (max-width: 576px) {
     .nav-menu {
         gap: var(--space-xs);
@@ -1182,5 +1228,93 @@ img {
     
     .category-tabs {
         flex-wrap: wrap;
+    }
+}
+.contact-section {
+    padding: 60px 0;
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-content {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    justify-content: space-between;
+}
+
+.contact-info, .contact-form {
+    flex: 1 1 350px;
+    min-width: 300px;
+}
+
+.contact-info {
+    margin-bottom: 0;
+}
+
+.contact-form {
+    margin-bottom: 0;
+}
+
+/* Social links responsive */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* Form fields responsive */
+.form-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-field {
+    flex: 1 1 180px;
+    min-width: 180px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .contact-content {
+        flex-direction: column;
+        gap: 32px;
+        align-items: stretch;
+    }
+    .contact-info, .contact-form {
+        min-width: 0;
+        width: 100%;
+    }
+    .form-group {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 32px 0;
+    }
+    .contact-container {
+        gap: 16px;
+    }
+    .contact-content {
+        padding: 0 10px;
+    }
+    .form-field input,
+    .form-field textarea {
+        font-size: 1rem;
+    }
+    .social-links {
+        gap: 10px;
     }
 }
